@@ -1,17 +1,39 @@
 import time
 import os
 
+def stroka():
+    while True:
+        s = str(input('Введите вашу строку: '))
+        if s == "0" :
+            print('Спасибо за пользование моими функциями Нуриддин!')
+            break
+        count = 1
+        el = s[0]
+        for i in s[1:]:
+            if el[-1] == i:
+                count += 1
+            else:
+                el += str(count) + i
+                count = 1
+        el += str(count)
+        print(el)
+        print("Для завершения работы - введите 0")
+
 def zero():
-    z = []
-    s = str(input('Введите ряд чисел( через пробел ): '))
-    s = s.split(' ')
-    l = len(s)
-    for x in s:
-        if x == '0':
-            z.append(x)
-            s.remove(x)
-    z = s + z
-    print(z)
+    while True:
+        z = []
+        s = str(input('Введите ряд чисел( через пробел ): '))
+        if s == '*':
+            break
+        s = s.split(' ')
+        l = len(s)
+        for x in s:
+            if x == '0':
+                z.append(x)
+                s.remove(x)
+        z = s + z
+        print(z)
+        print('Для завершения работы архиватора - введите *.')
 
 def load():
     os.system('cls')
@@ -68,22 +90,7 @@ if answ == 3:
         load()
         print('Приступаем!')
         s = 0
-        while True:
-            s = str(input('Введите вашу строку: '))
-            if s == "0" :
-                print('Спасибо за пользование моими функциями Нуриддин!')
-                break
-            count = 1
-            el = s[0]
-            for i in s[1:]:
-                if el[-1] == i:
-                    count += 1
-                else:
-                    el += str(count) + i
-                    count = 1
-            el += str(count)
-            print(el)
-            print("Для завершения работы - введите 0")           
+        stroka()
     elif answ == 2:
         os.system('cls')
         load()
