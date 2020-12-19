@@ -1,6 +1,18 @@
 import time
 import os
 
+def zero():
+    z = []
+    s = str(input('Введите ряд чисел( через пробел ): '))
+    s = s.split(' ')
+    l = len(s)
+    for x in s:
+        if x == '0':
+            z.append(x)
+            s.remove(x)
+    z = s + z
+    print(z)
+
 def load():
     os.system('cls')
     print('L')
@@ -59,6 +71,7 @@ if answ == 3:
         while True:
             s = str(input('Введите вашу строку: '))
             if s == "0" :
+                print('Спасибо за пользование моими функциями Нуриддин!')
                 break
             count = 1
             el = s[0]
@@ -70,10 +83,12 @@ if answ == 3:
                     count = 1
             el += str(count)
             print(el)
-            print("Для завершения работы - введите 0")
+            print("Для завершения работы - введите 0")           
     elif answ == 2:
         os.system('cls')
-        print('Понимаю. Сейчас оформим.')
+        load()
+        zero()
+        print('Спасибо за пользование моими функциями Нуриддин!')
     else:
         time.sleep(2)
         os.system('cls')
