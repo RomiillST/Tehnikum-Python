@@ -3,20 +3,19 @@ import os
 
 def stroka():
     while True:
-        s = str(input('Введите вашу строку: '))
-        if s == "0" :
-            print('Спасибо за пользование моими функциями Нуриддин!')
-            break
-        count = 1
-        el = s[0]
-        for i in s[1:]:
-            if el[-1] == i:
-                count += 1
+       s = input()
+        a = 0
+        b = s[0]
+        result = ""
+        for i in s:
+            if i == b:
+                a += 1
             else:
-                el += str(count) + i
-                count = 1
-        el += str(count)
-        print(el)
+                result += b + str(a)                    
+                a = 1
+                b = i
+        result += b + str(a)
+        print(result)
         print("Для завершения работы - введите 0")
 
 def zero():
