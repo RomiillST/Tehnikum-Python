@@ -4,20 +4,25 @@ import os
 
 def stroka():
     while True:
-       s = input()
-        a = 0
-        b = s[0]
+        s = input()
+        count = 1
         result = ""
-        for i in s:
-            if i == b:
-                a += 1
+        if s == '0':
+            break
+        for i in range(len(s) - 1):
+            if s[i] == s[i + 1]:
+                count += 1
             else:
-                result += b + str(a)                    
-                a = 1
-                b = i
-        result += b + str(a)
+                if count != 1:
+                    result += s[i] + str(count)
+                else:
+                    result += s[i]
+                count = 1
+        if count != 1:
+            result += s[-1] + str(count)
+        else:
+            result += s[-1]
         print(result)
-        print("Для завершения работы - введите 0")
 
 def zero():
     while True:
