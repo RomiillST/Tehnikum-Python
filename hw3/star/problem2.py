@@ -3,21 +3,7 @@ import os
 
 def stroka():
     while True:
-        s = str(input('Введите вашу строку: '))
-        if s == "0" :
-            print('Спасибо за пользование моими функциями Нуриддин!')
-            break
-        count = 1
-        el = s[0]
-        for i in s[1:]:
-            if el[-1] == i:
-                count += 1
-            else:
-                el += str(count) + i
-                count = 1
-        el += str(count)
-        print(el)
-        print("Для завершения работы - введите 0")
+
 
 def zero():
     while True:
